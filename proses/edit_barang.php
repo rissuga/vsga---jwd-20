@@ -1,5 +1,4 @@
 <?php
-
 include('..\utils\koneksi.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -10,7 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-  $query = "INSERT INTO barang SET nomor= '$nomor', nama= '$nama' , warna = '$warna' , jumlah = '$jumlah' ";
+  $query = "UPDATE barang SET nomor= '$nomor', nama= '$nama' , warna = '$warna' , jumlah = '$jumlah' WHERE nomor = '$nomor'";
+
 
   mysqli_query($conn, $query);
   header('location:../listbarang.php');
